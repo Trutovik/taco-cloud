@@ -4,7 +4,7 @@ import com.sabal.tacocloud.entities.Ingredient;
 import com.sabal.tacocloud.entities.Taco;
 import com.sabal.tacocloud.entities.TacoOrder;
 import com.sabal.tacocloud.entities.Type;
-import com.sabal.tacocloud.repositories.JDBCIngredientRepository;
+import com.sabal.tacocloud.repositories.IngredientRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,6 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,9 +22,9 @@ import java.util.stream.Collectors;
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
 
-    private final JDBCIngredientRepository ingredientRepo;
+    private final IngredientRepository ingredientRepo;
 
-    public DesignTacoController(JDBCIngredientRepository ingredientRepo) {
+    public DesignTacoController(IngredientRepository ingredientRepo) {
         this.ingredientRepo = ingredientRepo;
     }
 

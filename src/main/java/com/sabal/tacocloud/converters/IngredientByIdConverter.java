@@ -1,20 +1,16 @@
 package com.sabal.tacocloud.converters;
 
 import com.sabal.tacocloud.entities.Ingredient;
-import com.sabal.tacocloud.entities.Type;
-import com.sabal.tacocloud.repositories.JDBCIngredientRepository;
+import com.sabal.tacocloud.repositories.IngredientRepository;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
-    private JDBCIngredientRepository ingredientRepository;
+    private final IngredientRepository ingredientRepository;
 
-    public IngredientByIdConverter(JDBCIngredientRepository ingredientRepository) {
+    public IngredientByIdConverter(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
 
