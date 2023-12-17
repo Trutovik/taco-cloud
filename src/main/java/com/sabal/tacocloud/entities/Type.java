@@ -5,5 +5,6 @@ public enum Type {
     PROTEIN,
     VEGGIES,
     CHEESE,
-    SAUCE
+    SAUCE,
+    POISON
 }
